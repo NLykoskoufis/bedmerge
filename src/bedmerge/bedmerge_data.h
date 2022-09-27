@@ -18,13 +18,15 @@ public:
 
 
     // BED RELATED 
-
-    std::vector < double > 
-
+    
+    std::vector < double > phenotypeValVector; 
 
     // FUNCTIONS 
 
+    void readPhenotypes(std::string);
+    void readGTF(std::string);
 
+    
 
 
 };
