@@ -1,6 +1,6 @@
 #pragma once 
 
-#include "../common/data.h"
+#include "otools.h"
 
 
 class Bedmerge {
@@ -14,17 +14,25 @@ public:
     std::vector < int > gtfEndVector;
     std::vector < std::string > gtfStrandVector;
 
-    std::unordered_map < std::string, unsigned int > gtfGeneIndexMap; 
+    std::unordered_map < std::string, int > gtfGeneIndexMap; 
 
+    unsigned int ensemblIDvector_size;
 
     // BED RELATED 
     
     std::vector < double > phenotypeValVector; 
+    std::string sampleID;
+    
+    // OUTPUT FILE RELATED 
+    std::string outputFileName;
 
+    
     // FUNCTIONS 
 
-    void readPhenotypes(std::string);
+    void readFeatureCountsPhenotypes(std::string);
     void readGTF(std::string);
+    void writeAnno();
+    void populateOutputFile(std::string &);
 
     
 
